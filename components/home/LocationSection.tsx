@@ -76,14 +76,20 @@ export function LocationSection() {
             </div>
           </div>
 
-          {/* Right Column - Google Maps */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="w-full h-full min-h-[400px] bg-gradient-to-br from-beige to-light-yellow flex items-center justify-center">
-              {/* Placeholder for Google Maps embed */}
-              <p className="text-medium-gray font-sans text-center px-8">
-                [Google Maps Embed - 49C Orchard Street, Weston-super-Mare BS23 1RJ]
-              </p>
-            </div>
+          {/* Right Column - Salon Video */}
+          <div className="bg-black rounded-lg shadow-lg overflow-hidden flex items-center justify-center min-h-[400px]">
+            <video
+              className="h-[500px] w-auto"
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls
+              preload="metadata"
+            >
+              <source src="/videos/salon-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function BeforeAfterSection() {
   return (
@@ -20,20 +21,28 @@ export function BeforeAfterSection() {
                 <p className="text-sm font-sans font-semibold text-dark-gray mb-2 text-center">
                   BEFORE
                 </p>
-                <div className="aspect-square bg-gradient-to-br from-beige to-cream rounded-lg flex items-center justify-center">
-                  <p className="text-medium-gray text-sm">
-                    [Before Image]
-                  </p>
+                <div className="relative aspect-square rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/before-1.png"
+                    alt="Before treatment 1"
+                    fill
+                    className="object-cover"
+                    quality={90}
+                  />
                 </div>
               </div>
               <div>
                 <p className="text-sm font-sans font-semibold text-accent-gold mb-2 text-center">
                   AFTER
                 </p>
-                <div className="aspect-square bg-gradient-to-br from-light-yellow to-beige rounded-lg flex items-center justify-center">
-                  <p className="text-medium-gray text-sm">
-                    [After Image]
-                  </p>
+                <div className="relative aspect-square rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/after-1.png"
+                    alt="After treatment 1"
+                    fill
+                    className="object-cover"
+                    quality={90}
+                  />
                 </div>
               </div>
             </div>
@@ -46,20 +55,28 @@ export function BeforeAfterSection() {
                 <p className="text-sm font-sans font-semibold text-dark-gray mb-2 text-center">
                   BEFORE
                 </p>
-                <div className="aspect-square bg-gradient-to-br from-beige to-cream rounded-lg flex items-center justify-center">
-                  <p className="text-medium-gray text-sm">
-                    [Before Image]
-                  </p>
+                <div className="relative aspect-square rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/before-2.png"
+                    alt="Before treatment 2"
+                    fill
+                    className="object-cover"
+                    quality={90}
+                  />
                 </div>
               </div>
               <div>
                 <p className="text-sm font-sans font-semibold text-accent-gold mb-2 text-center">
                   AFTER
                 </p>
-                <div className="aspect-square bg-gradient-to-br from-light-yellow to-beige rounded-lg flex items-center justify-center">
-                  <p className="text-medium-gray text-sm">
-                    [After Image]
-                  </p>
+                <div className="relative aspect-square rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/after-2.png"
+                    alt="After treatment 2"
+                    fill
+                    className="object-cover"
+                    quality={90}
+                  />
                 </div>
               </div>
             </div>
@@ -70,7 +87,7 @@ export function BeforeAfterSection() {
         <div className="text-center">
           <Link
             href="/gallery"
-            className="inline-block bg-accent-gold text-white px-8 py-3 rounded-full font-sans font-medium hover:bg-accent-gold/90 transition-colors"
+            className="inline-block bg-accent-gold text-white px-8 py-2.5 rounded-[3rem] font-serif font-semibold text-xl hover:bg-accent-gold/90 transition-colors"
           >
             Explore
           </Link>

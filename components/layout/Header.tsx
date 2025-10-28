@@ -41,23 +41,16 @@ export function Header() {
     <header className="sticky top-0 z-50 bg-light-yellow shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <span className="text-xl md:text-2xl font-serif font-bold text-dark-gray hover:text-accent-gold transition-colors">
-              Rosie Beauty Salon
-            </span>
-          </Link>
-
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-8">
             {navigationLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={link.href === '#contact' ? handleContactClick : undefined}
-                className={`text-sm font-sans font-medium transition-colors ${
+                className={`text-base md:text-lg font-serif font-bold transition-colors ${
                   isActive(link.href)
-                    ? 'text-accent-gold font-semibold'
+                    ? 'text-accent-gold'
                     : 'text-dark-gray hover:text-accent-gold'
                 }`}
                 aria-current={isActive(link.href) ? 'page' : undefined}
@@ -67,9 +60,11 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Book Now Button (Desktop) */}
-          <div className="hidden md:block">
-            <Button text="Book Now" size="small" />
+          {/* Salon Name */}
+          <div className="flex items-center">
+            <span className="text-xl md:text-2xl font-serif font-bold text-dark-gray">
+              Rosie Beauty Salon
+            </span>
           </div>
 
           {/* Mobile Menu Button */}
@@ -113,7 +108,7 @@ export function Header() {
                       setMobileMenuOpen(false);
                     }
                   }}
-                  className={`text-base font-sans font-medium py-2 transition-colors ${
+                  className={`text-base font-serif font-medium py-2 transition-colors ${
                     isActive(link.href)
                       ? 'text-accent-gold font-semibold'
                       : 'text-dark-gray hover:text-accent-gold'

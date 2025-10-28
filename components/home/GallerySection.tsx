@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Card } from '../ui/Card';
 
 export function GallerySection() {
-  // Placeholder gallery images
+  // Gallery images
   const galleryImages = Array.from({ length: 6 }, (_, i) => i + 1);
 
   return (
@@ -19,10 +20,14 @@ export function GallerySection() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
           {galleryImages.map((num) => (
             <Card key={num} variant="gallery" hoverable>
-              <div className="aspect-square bg-gradient-to-br from-beige to-light-yellow flex items-center justify-center">
-                <p className="text-medium-gray font-sans text-sm">
-                  [Image {num}]
-                </p>
+              <div className="relative aspect-square overflow-hidden">
+                <Image
+                  src={`/images/gallery-${num}.avif`}
+                  alt={`Gallery image ${num}`}
+                  fill
+                  className="object-cover"
+                  quality={90}
+                />
               </div>
             </Card>
           ))}
@@ -32,7 +37,7 @@ export function GallerySection() {
         <div className="text-center">
           <Link
             href="/gallery"
-            className="inline-block bg-accent-gold text-white px-8 py-3 rounded-full font-sans font-medium hover:bg-accent-gold/90 transition-colors"
+            className="inline-block bg-accent-gold text-white px-8 py-2.5 rounded-[3rem] font-serif font-semibold text-xl hover:bg-accent-gold/90 transition-colors"
           >
             View Full Gallery
           </Link>

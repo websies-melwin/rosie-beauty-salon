@@ -3,36 +3,42 @@ import { Button } from '../ui/Button';
 
 export function HeroSection() {
   return (
-    <section className="relative h-[90vh] min-h-[600px] w-full overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/hero-background.avif"
-          alt="Beauty salon facial treatment"
-          fill
-          priority
-          className="object-cover object-center"
-          quality={90}
-        />
-        {/* Subtle overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent" />
-      </div>
+    <section className="relative w-full bg-white py-6 md:py-8 lg:py-12">
+      <div className="max-w-7xl mx-auto px-5 sm:px-4 md:px-6 lg:px-8">
+        <div className="relative h-[60vh] min-h-[400px] md:h-[70vh] md:min-h-[450px] lg:h-[80vh] lg:min-h-[500px] rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden">
+          {/* Mobile Background Image */}
+          <Image
+            src="/images/hero-mobile.avif"
+            alt="Beauty salon facial treatment"
+            fill
+            priority
+            className="object-cover object-center md:hidden"
+            quality={90}
+          />
 
-      {/* Content Overlay */}
-      <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-end h-full">
-          <div className="text-right max-w-2xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-dark-gray mb-6">
-              Elite Aesthetics Salon
-            </h1>
-            <p className="text-xl md:text-2xl lg:text-3xl font-sans text-medium-gray mb-8">
-              Your Path to Radiance
-            </p>
-            <Button
-              text="Book Now"
-              size="large"
-              variant="primary"
-            />
+          {/* Desktop Background Image */}
+          <Image
+            src="/images/hero-background.avif"
+            alt="Beauty salon facial treatment"
+            fill
+            priority
+            className="object-cover object-center hidden md:block"
+            quality={90}
+          />
+
+          {/* Content Overlay */}
+          <div className="relative h-full flex items-start justify-end p-4 md:p-10 lg:p-12 pt-4 md:pt-8 lg:pt-10">
+            <div className="text-right max-w-xl">
+              <h1 className="text-2xl md:text-4xl lg:text-5xl font-serif font-bold text-dark-gray mb-2 md:mb-4">
+                Elite Aesthetics Salon
+              </h1>
+              <p className="text-sm md:text-lg lg:text-xl font-sans text-medium-gray mb-4 md:mb-6">
+                Your Path to Radiance
+              </p>
+              <div className="flex justify-end">
+                <Button text="Book Now" size="small" />
+              </div>
+            </div>
           </div>
         </div>
       </div>

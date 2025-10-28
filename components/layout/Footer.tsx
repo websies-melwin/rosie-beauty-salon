@@ -109,7 +109,7 @@ export function Footer() {
             </h3>
             <div className="flex space-x-4 mb-6">
               <a
-                href="#"
+                href="https://www.instagram.com/rosiebeautyst"
                 className="text-dark-gray hover:text-accent-gold transition-colors"
                 aria-label="Instagram"
                 target="_blank"
@@ -118,7 +118,7 @@ export function Footer() {
                 <Instagram className="h-6 w-6" />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61575707164944"
                 className="text-dark-gray hover:text-accent-gold transition-colors"
                 aria-label="Facebook"
                 target="_blank"

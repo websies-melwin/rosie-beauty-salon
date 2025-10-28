@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export function AboutSection() {
   return (
     <section className="w-full bg-white py-16 md:py-24">
@@ -21,11 +23,14 @@ export function AboutSection() {
 
           {/* Right Column - Image */}
           <div className="flex items-center justify-center">
-            <div className="w-full max-w-md h-96 bg-gradient-to-br from-light-yellow to-beige rounded-lg shadow-lg flex items-center justify-center">
-              {/* Placeholder for Rosica's photo */}
-              <p className="text-medium-gray font-sans text-center px-8">
-                [Rosica's Photo]
-              </p>
+            <div className="relative w-full max-w-md h-96 rounded-lg shadow-lg overflow-hidden">
+              <Image
+                src="/images/rosica-photo.jpg"
+                alt="Rosica - Salon Owner"
+                fill
+                className="object-cover object-center"
+                quality={90}
+              />
             </div>
           </div>
         </div>

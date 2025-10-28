@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function ServicesSection() {
   return (
@@ -24,11 +25,11 @@ export function ServicesSection() {
                 Facial & Skin Therapies - Uncover Perfect Skin
               </h3>
               <p className="text-base md:text-lg font-sans text-medium-gray mb-6">
-                Experience comprehensive facial treatments designed to rejuvenate and restore your skin's natural radiance. From deep cleansing to advanced therapies, each treatment is tailored to your unique needs.
+                Rejuvenate your skin with our comprehensive facial treatments. From deep cleansing to advanced therapies, each treatment is tailored to your unique needs.
               </p>
               <Link
                 href="/face-skin"
-                className="inline-block bg-accent-gold text-white px-8 py-3 rounded-full font-sans font-medium hover:bg-accent-gold/90 transition-colors"
+                className="inline-block bg-accent-gold text-white px-8 py-2.5 rounded-[3rem] font-serif font-semibold text-xl hover:bg-accent-gold/90 transition-colors"
               >
                 View All Facial Treatments
               </Link>
@@ -40,11 +41,11 @@ export function ServicesSection() {
                 Laser Hair Removal & Radiant Skin Therapies
               </h3>
               <p className="text-base md:text-lg font-sans text-medium-gray mb-6">
-                Achieve smooth, hair-free skin with our advanced laser hair removal services. Safe and effective for both men and women, our treatments deliver long-lasting results with minimal discomfort.
+                Achieve smooth, hair-free skin with our advanced laser treatments. Safe, effective, and long-lasting results for both men and women.
               </p>
               <Link
                 href="/laser-hair-removal"
-                className="inline-block bg-accent-gold text-white px-8 py-3 rounded-full font-sans font-medium hover:bg-accent-gold/90 transition-colors"
+                className="inline-block bg-accent-gold text-white px-8 py-2.5 rounded-[3rem] font-serif font-semibold text-xl hover:bg-accent-gold/90 transition-colors"
               >
                 View All Laser Services
               </Link>
@@ -53,11 +54,14 @@ export function ServicesSection() {
 
           {/* Right Column - Image */}
           <div className="flex items-center justify-center">
-            <div className="w-full h-96 bg-gradient-to-br from-beige to-light-yellow rounded-lg shadow-lg flex items-center justify-center">
-              {/* Placeholder for salon equipment/products image */}
-              <p className="text-medium-gray font-sans text-center px-8">
-                [Salon Equipment & Products Image]
-              </p>
+            <div className="relative w-full h-full min-h-[600px] rounded-lg shadow-lg overflow-hidden">
+              <Image
+                src="/images/salon-equipment.jpg"
+                alt="Salon equipment and products"
+                fill
+                className="object-cover object-center"
+                quality={90}
+              />
             </div>
           </div>
         </div>

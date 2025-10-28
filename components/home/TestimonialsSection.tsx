@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Card } from '../ui/Card';
 
 const testimonials = [
@@ -30,7 +31,7 @@ export function TestimonialsSection() {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {testimonials.map((testimonial, index) => (
             <Card key={index} variant="testimonial">
               <div className="text-center">
@@ -56,6 +57,18 @@ export function TestimonialsSection() {
               </div>
             </Card>
           ))}
+        </div>
+
+        {/* Google Reviews Link */}
+        <div className="text-center">
+          <Link
+            href="https://www.google.com/search?sca_esv=fe33c2d79fc146ed&hl=en-VN&sxsrf=AE3TifMUujqQKmgMujvtbBUbNgdhb_xOuA:1761650124903&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E1GKnNYwZ2gEgNP6SjYCZrDmZFCesAIMCwd-qpP0Bo0WxSN5h2TNUwEBFVUfEbkEyCpeVFZquzcjS4mo7NIw1hSVUM6y-bLrMb8Z16IMXiWyg6wphA%3D%3D&q=Rosie+Beauty+Salon+Reviews&sa=X&ved=2ahUKEwi6iaeP4saQAxWqzjQHHWa-OlAQ0bkNegQIIBAE&biw=1536&bih=695&dpr=1.25"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-accent-gold text-white px-8 py-2.5 rounded-[3rem] font-serif font-semibold text-xl hover:bg-accent-gold/90 transition-colors"
+          >
+            View All Google Reviews
+          </Link>
         </div>
       </div>
     </section>

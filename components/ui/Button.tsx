@@ -19,7 +19,7 @@ export function Button({
   type = 'button',
   className = '',
 }: ButtonProps) {
-  const baseStyles = 'font-sans font-medium rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-gold focus:ring-offset-2';
+  const baseStyles = 'font-serif font-semibold rounded-[3rem] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-gold focus:ring-offset-2';
 
   const variantStyles = {
     primary: 'border-2 border-accent-gold text-accent-gold hover:bg-accent-gold hover:text-white disabled:opacity-50 disabled:cursor-not-allowed',
@@ -27,9 +27,9 @@ export function Button({
   };
 
   const sizeStyles = {
-    small: 'px-6 py-2.5 text-sm',
-    medium: 'px-8 py-3 text-base',
-    large: 'px-10 py-3.5 text-lg',
+    small: 'px-6 py-2 text-lg',
+    medium: 'px-8 py-2.5 text-xl',
+    large: 'px-10 py-3 text-2xl',
   };
 
   const combinedClasses = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
