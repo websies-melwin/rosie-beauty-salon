@@ -1,12 +1,21 @@
+import Image from 'next/image';
 import { Button } from '../ui/Button';
 
 export function HeroSection() {
   return (
     <section className="relative h-[90vh] min-h-[600px] w-full overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-gradient-to-r from-cream/90 to-beige/80">
-        {/* Placeholder for hero image - will be replaced with actual image */}
-        <div className="absolute inset-0 bg-accent-gold/10" />
+      <div className="absolute inset-0">
+        <Image
+          src="/images/hero-background.avif"
+          alt="Beauty salon facial treatment"
+          fill
+          priority
+          className="object-cover object-center"
+          quality={90}
+        />
+        {/* Subtle overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent" />
       </div>
 
       {/* Content Overlay */}
