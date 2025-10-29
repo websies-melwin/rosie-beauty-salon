@@ -17,23 +17,41 @@ const womenServices = [
   { name: 'Lip & Chin Package', single: 60, course: 300, isPackage: true },
 ];
 
+import { Tag } from 'lucide-react';
+
 export function PricingWomen() {
   return (
-    <section className="w-full bg-white py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-white py-16 md:py-24 relative overflow-hidden">
+      {/* Subtle Decorative Elements */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-accent-gold/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-10 w-40 h-40 bg-accent-gold/5 rounded-full blur-3xl"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="inline-flex items-center gap-2 bg-cream/60 backdrop-blur-sm px-4 py-2 rounded-full mb-4 shadow-sm">
+          <Tag className="h-4 w-4 text-accent-gold" />
+          <span className="text-accent-gold font-serif font-semibold text-sm">
+            Women's Pricing
+          </span>
+        </div>
         <h2 className="text-3xl md:text-4xl font-serif font-bold text-dark-gray mb-6">
           Pricing - Women
         </h2>
         
-        <p className="text-base md:text-lg font-sans text-medium-gray leading-relaxed mb-8">
+        <p className="text-base md:text-lg font-sans text-medium-gray leading-relaxed mb-6">
           Get rid of unwanted hair with our effective laser hair removal treatments. Our expert team uses advanced technology for smooth, lasting results. Whether you want to treat a small area or go for a full body package, we have flexible options to suit your needs. Enjoy the convenience of fewer sessions and long-term hair reduction with our professional care.
         </p>
+
+        <div className="text-center mb-8 bg-gradient-to-r from-transparent via-accent-gold/10 to-transparent py-4 rounded-lg">
+          <p className="text-base md:text-lg font-serif text-dark-gray font-semibold">
+            <span className="text-accent-gold">→</span> Click on any service to book <span className="text-accent-gold">←</span>
+          </p>
+        </div>
 
         <div className="space-y-4">
           {womenServices.map((service, index) => (
             <div 
               key={index}
-              className={`bg-beige/30 rounded-lg p-4 md:p-6 ${service.isPackage ? 'border-2 border-accent-gold' : ''}`}
+              className={`bg-cream/40 rounded-xl shadow-md p-4 md:p-6 hover:shadow-lg transition-shadow ${service.isPackage ? 'border-2 border-accent-gold' : 'border border-accent-gold/10'}`}
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div className="flex-grow">

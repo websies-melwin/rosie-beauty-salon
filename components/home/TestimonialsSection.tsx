@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Card } from '../ui/Card';
+import { Star } from 'lucide-react';
 
 const testimonials = [
   {
@@ -21,10 +22,20 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="w-full bg-beige py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-beige py-16 md:py-24 relative overflow-hidden">
+      {/* Subtle Decorative Elements */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-accent-gold/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-10 w-40 h-40 bg-accent-gold/5 rounded-full blur-3xl"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full mb-4 shadow-sm">
+            <Star className="h-4 w-4 text-accent-gold fill-accent-gold" />
+            <span className="text-accent-gold font-serif font-semibold text-sm">
+              Client Testimonials
+            </span>
+          </div>
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-dark-gray mb-4">
             Hear From My Clients
           </h2>
@@ -65,7 +76,7 @@ export function TestimonialsSection() {
             href="https://www.google.com/search?sca_esv=fe33c2d79fc146ed&hl=en-VN&sxsrf=AE3TifMUujqQKmgMujvtbBUbNgdhb_xOuA:1761650124903&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E1GKnNYwZ2gEgNP6SjYCZrDmZFCesAIMCwd-qpP0Bo0WxSN5h2TNUwEBFVUfEbkEyCpeVFZquzcjS4mo7NIw1hSVUM6y-bLrMb8Z16IMXiWyg6wphA%3D%3D&q=Rosie+Beauty+Salon+Reviews&sa=X&ved=2ahUKEwi6iaeP4saQAxWqzjQHHWa-OlAQ0bkNegQIIBAE&biw=1536&bih=695&dpr=1.25"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-accent-gold text-white px-8 py-2.5 rounded-[3rem] font-serif font-semibold text-xl hover:bg-accent-gold/90 transition-colors"
+            className="inline-block bg-accent-gold text-white px-8 py-2.5 rounded-[3rem] font-serif font-semibold text-xl hover:bg-accent-gold/90 transition-all hover:shadow-md"
           >
             View All Google Reviews
           </Link>

@@ -70,12 +70,6 @@ export function Footer() {
             </h3>
             <nav className="space-y-2">
               <Link
-                href="/"
-                className="block text-sm text-dark-gray hover:text-accent-gold transition-colors"
-              >
-                Home
-              </Link>
-              <Link
                 href="/face-skin"
                 className="block text-sm text-dark-gray hover:text-accent-gold transition-colors"
               >
@@ -102,12 +96,12 @@ export function Footer() {
             </nav>
           </div>
 
-          {/* Column 4: Follow Us & Legal */}
+          {/* Column 4: Follow Us */}
           <div>
             <h3 className="text-lg font-serif font-bold text-dark-gray mb-4">
               Follow Us
             </h3>
-            <div className="flex space-x-4 mb-6">
+            <div className="flex space-x-4">
               <a
                 href="https://www.instagram.com/rosiebeautyst"
                 className="text-dark-gray hover:text-accent-gold transition-colors"
@@ -127,39 +121,24 @@ export function Footer() {
                 <Facebook className="h-6 w-6" />
               </a>
             </div>
-            <div className="space-y-2 text-sm text-medium-gray">
-              <Link
-                href="#"
-                className="block hover:text-accent-gold transition-colors"
-              >
-                Terms & Conditions
-              </Link>
-              <Link
-                href="#"
-                className="block hover:text-accent-gold transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="#"
-                className="block hover:text-accent-gold transition-colors"
-              >
-                Refund Policy
-              </Link>
-              <Link
-                href="#"
-                className="block hover:text-accent-gold transition-colors"
-              >
-                Accessibility
-              </Link>
-            </div>
           </div>
         </div>
 
         {/* Footer Bottom */}
         <div className="border-t border-beige pt-6 text-center">
-          <p className="text-sm text-medium-gray">
+          <p className="text-sm text-medium-gray mb-4">
             © {new Date().getFullYear()} Rosie Beauty Salon. All rights reserved.
+          </p>
+          <p className="text-lg font-serif text-dark-gray font-medium">
+            Made by{' '}
+            <a
+              href="https://www.websies.co"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent-gold hover:text-accent-gold/80 transition-colors font-semibold"
+            >
+              Websies
+            </a>
           </p>
         </div>
       </div>
