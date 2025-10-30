@@ -3,9 +3,9 @@ import { Button } from '../ui/Button';
 
 export function HeroSection() {
   return (
-    <section className="relative w-full bg-white py-6 md:py-8 lg:py-12">
-      <div className="max-w-7xl mx-auto px-5 sm:px-4 md:px-6 lg:px-8">
-        <div className="relative h-[60vh] min-h-[400px] md:h-[70vh] md:min-h-[450px] lg:h-[80vh] lg:min-h-[500px] rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden">
+    <section className="relative w-full bg-white min-h-screen flex items-center justify-center py-6 md:py-8 lg:py-12">
+      <div className="max-w-7xl mx-auto px-5 sm:px-4 md:px-6 lg:px-8 w-full">
+        <div className="relative h-[85vh] rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden -mt-8">
           {/* Mobile Background Image */}
           <Image
             src="/images/hero-mobile.avif"
