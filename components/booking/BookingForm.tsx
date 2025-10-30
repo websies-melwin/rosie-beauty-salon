@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Service } from '@/data/services';
 import { CreateBookingInput } from '@/types/booking';
 import { ServiceSelection } from './ServiceSelection';
@@ -31,6 +31,11 @@ export function BookingForm() {
   });
   const [bookingId, setBookingId] = useState<string>('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Scroll to top when step changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [step]);
 
   const updateData = (data: Partial<BookingFormData>) => {
     setBookingData(prev => ({ ...prev, ...data }));

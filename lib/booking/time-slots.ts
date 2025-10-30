@@ -22,8 +22,9 @@ export function generateTimeSlots(
   
   const slots: TimeSlot[] = [];
   
-  // Generate 15-minute interval slots
-  for (let time = openMinutes; time < closeMinutes; time += 15) {
+  // Generate time slots based on service duration (minimum 30 min intervals)
+  const slotInterval = Math.max(serviceDuration, 30);
+  for (let time = openMinutes; time < closeMinutes; time += slotInterval) {
     const slotTime = minutesToTime(time);
     const slotEndTime = time + totalServiceTime;
     
