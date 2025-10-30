@@ -50,13 +50,6 @@ const services = [
     duration: '60-75 min',
     price: 95,
   },
-  {
-    id: 'laser-hair-removal-back',
-    name: 'Laser Hair Removal (Back)',
-    description: 'Safe and effective hair removal therapy you need to try now',
-    duration: '1 hr',
-    price: 'Varies',
-  },
 ];
 
 export function ServicesList() {
