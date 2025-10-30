@@ -1,13 +1,15 @@
+import Link from 'next/link';
 import { Button } from '../ui/Button';
 
 interface ServiceCardProps {
+  id: string;
   name: string;
   description: string;
   duration: string;
   price: number | string;
 }
 
-export function ServiceCard({ name, description, duration, price }: ServiceCardProps) {
+export function ServiceCard({ id, name, description, duration, price }: ServiceCardProps) {
   const displayPrice = typeof price === 'number' ? `£${price}` : price;
 
   return (
@@ -33,11 +35,13 @@ export function ServiceCard({ name, description, duration, price }: ServiceCardP
       </div>
 
       {/* Book Now Button */}
-      <Button
-        text="Book Now"
-        size="medium"
-        variant="primary"
-      />
+      <Link href={`/booking?service=${id}`}>
+        <Button
+          text="Book Now"
+          size="medium"
+          variant="primary"
+        />
+      </Link>
     </div>
   );
 }

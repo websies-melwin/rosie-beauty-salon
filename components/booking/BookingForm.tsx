@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Service } from '@/data/services';
+import { useSearchParams } from 'next/navigation';
+import { Service, ALL_SERVICES } from '@/data/services';
 import { CreateBookingInput } from '@/types/booking';
 import { ServiceSelection } from './ServiceSelection';
 import { DateTimeSelection } from './DateTimeSelection';
@@ -22,6 +23,9 @@ interface BookingFormData {
 }
 
 export function BookingForm() {
+  const searchParams = useSearchParams();
+  const serviceId = searchParams.get('service');
+  
   const [step, setStep] = useState<BookingStep>('service');
   const [bookingData, setBookingData] = useState<BookingFormData>({
     clientName: '',
@@ -31,6 +35,17 @@ export function BookingForm() {
   });
   const [bookingId, setBookingId] = useState<string>('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Pre-select service from URL parameter if present
+  useEffect(() => {
+    if (serviceId) {
+      const preselectedService = ALL_SERVICES.find(s => s.id === serviceId);
+      if (preselectedService) {
+        setBookingData(prev => ({ ...prev, service: preselectedService }));
+        setStep('datetime');
+      }
+    }
+  }, [serviceId]);
 
   // Scroll to top when step changes
   useEffect(() => {

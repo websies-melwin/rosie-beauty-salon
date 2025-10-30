@@ -36,7 +36,7 @@ export function HeroSection() {
                 Your Path to Radiance
               </p>
               <div className="flex justify-end">
-                <Button text="Book Now" size="small" />
+                <Button text="Book Now" size="small" href="/booking" />
               </div>
             </div>
           </div>

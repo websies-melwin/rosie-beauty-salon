@@ -24,6 +24,7 @@ export function LaserCTA() {
           text="Book Now"
           size="large"
           variant="primary"
+          href="/booking"
         />
       </div>
     </section>

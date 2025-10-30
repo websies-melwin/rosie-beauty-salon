@@ -1,30 +1,31 @@
-const menServices = [
-  { name: 'Middle of Eyebrows', single: 40, course: 200 },
-  { name: 'Jawline/Sides', single: 40, course: 200 },
-  { name: 'Jawline/Sides + Lip', single: 60, course: 300 },
-  { name: 'Back of the Neck', single: 60, course: 300 },
-  { name: 'Underarm', single: 50, course: 250 },
-  { name: 'Half Arm', single: 90, course: 450 },
-  { name: 'Full Arm', single: 150, course: 750 },
-  { name: 'Hands/Fingers', single: 40, course: 200 },
-  { name: 'Half Arm + Hands/Fingers', single: 110, course: 550 },
-  { name: 'Full Arm + Hands/Fingers', single: 170, course: 850 },
-  { name: 'Half Legs', single: 100, course: 500 },
-  { name: 'Thighs', single: 120, course: 600 },
-  { name: 'Full Legs', single: 160, course: 800 },
-  { name: 'Half Legs + Fingers', single: 120, course: 600 },
-  { name: 'Full Legs + Fingers', single: 180, course: 900 },
-  { name: 'Shoulders', single: 90, course: 450 },
-  { name: 'Chest', single: 90, course: 450 },
-  { name: 'Stomach', single: 90, course: 450 },
-  { name: 'Back', single: 120, course: 600 },
-  { name: 'Back + Shoulders', single: 180, course: 900 },
-  { name: 'Chest + Shoulders + Stomach', single: 180, course: 900 },
-  { name: 'Cross', single: 60, course: 300 },
-  { name: 'Full Body Package', description: 'Full back, Shoulders, Chest, Arms', single: 300, originalPrice: 360, course: 1500, isPackage: true },
-];
-
+import Link from 'next/link';
 import { Tag } from 'lucide-react';
+
+const menServices = [
+  { id: 'laser-men-eyebrows', name: 'Middle of Eyebrows', single: 40, course: 200 },
+  { id: 'laser-men-jawline', name: 'Jawline/Sides', single: 40, course: 200 },
+  { id: 'laser-men-jawline-lip', name: 'Jawline/Sides + Lip', single: 60, course: 300 },
+  { id: 'laser-men-neck', name: 'Back of the Neck', single: 60, course: 300 },
+  { id: 'laser-men-underarm', name: 'Underarm', single: 50, course: 250 },
+  { id: 'laser-men-half-arm', name: 'Half Arm', single: 90, course: 450 },
+  { id: 'laser-men-full-arm', name: 'Full Arm', single: 150, course: 750 },
+  { id: 'laser-men-hands', name: 'Hands/Fingers', single: 40, course: 200 },
+  { id: 'laser-men-half-arm-hands', name: 'Half Arm + Hands/Fingers', single: 110, course: 550 },
+  { id: 'laser-men-full-arm-hands', name: 'Full Arm + Hands/Fingers', single: 170, course: 850 },
+  { id: 'laser-men-half-legs', name: 'Half Legs', single: 100, course: 500 },
+  { id: 'laser-men-thighs', name: 'Thighs', single: 120, course: 600 },
+  { id: 'laser-men-full-legs', name: 'Full Legs', single: 160, course: 800 },
+  { id: 'laser-men-half-legs-fingers', name: 'Half Legs + Fingers', single: 120, course: 600 },
+  { id: 'laser-men-full-legs-fingers', name: 'Full Legs + Fingers', single: 180, course: 900 },
+  { id: 'laser-men-shoulders', name: 'Shoulders', single: 90, course: 450 },
+  { id: 'laser-men-chest', name: 'Chest', single: 90, course: 450 },
+  { id: 'laser-men-stomach', name: 'Stomach', single: 90, course: 450 },
+  { id: 'laser-men-back', name: 'Back', single: 120, course: 600 },
+  { id: 'laser-men-back-shoulders', name: 'Back + Shoulders', single: 180, course: 900 },
+  { id: 'laser-men-chest-shoulders-stomach', name: 'Chest + Shoulders + Stomach', single: 180, course: 900 },
+  { id: 'laser-men-cross', name: 'Cross', single: 60, course: 300 },
+  { id: 'laser-men-full-body', name: 'Full Body Package', description: 'Full back, Shoulders, Chest, Arms', single: 300, originalPrice: 360, course: 1500, isPackage: true },
+];
 
 export function PricingMen() {
   return (
@@ -56,9 +57,10 @@ export function PricingMen() {
 
         <div className="space-y-4">
           {menServices.map((service, index) => (
-            <div 
+            <Link 
               key={index}
-              className={`bg-white rounded-xl shadow-md p-4 md:p-6 hover:shadow-lg transition-shadow ${service.isPackage ? 'border-2 border-accent-gold' : 'border border-accent-gold/10'}`}
+              href={`/booking?service=${service.id}`}
+              className={`block bg-white rounded-xl shadow-md p-4 md:p-6 hover:shadow-lg transition-shadow cursor-pointer ${service.isPackage ? 'border-2 border-accent-gold' : 'border border-accent-gold/10'}`}
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div className="flex-grow">
@@ -90,7 +92,7 @@ export function PricingMen() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

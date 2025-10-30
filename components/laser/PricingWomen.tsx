@@ -1,23 +1,24 @@
-const womenServices = [
-  { name: 'Upper Lip', single: 40, course: 200 },
-  { name: 'Chin', single: 40, course: 200 },
-  { name: 'Half Face', single: 80, course: 400 },
-  { name: 'Full Face', single: 100, course: 500 },
-  { name: 'Underarm', single: 50, course: 250 },
-  { name: 'Half Arm', single: 80, course: 400 },
-  { name: 'Full Arm', single: 120, course: 600 },
-  { name: 'Half Legs', single: 90, course: 450 },
-  { name: 'Full Legs', single: 150, course: 750 },
-  { name: 'Bikini Line', single: 65, course: 325 },
-  { name: 'Brazilian', single: 85, course: 425 },
-  { name: 'Hollywood', single: 100, course: 500 },
-  { name: 'Tummy Line', single: 40, course: 200 },
-  { name: 'Tummy Line Add-on (to any Bikini)', single: 20, course: 100 },
-  { name: 'Full Body Package', description: 'Full Legs, Any Bikini, Underarm, Lip', single: 280, originalPrice: 340, course: 1400, isPackage: true },
-  { name: 'Lip & Chin Package', single: 60, course: 300, isPackage: true },
-];
-
+import Link from 'next/link';
 import { Tag } from 'lucide-react';
+
+const womenServices = [
+  { id: 'laser-women-upper-lip', name: 'Upper Lip', single: 40, course: 200 },
+  { id: 'laser-women-chin', name: 'Chin', single: 40, course: 200 },
+  { id: 'laser-women-half-face', name: 'Half Face', single: 80, course: 400 },
+  { id: 'laser-women-full-face', name: 'Full Face', single: 100, course: 500 },
+  { id: 'laser-women-underarm', name: 'Underarm', single: 50, course: 250 },
+  { id: 'laser-women-half-arm', name: 'Half Arm', single: 80, course: 400 },
+  { id: 'laser-women-full-arm', name: 'Full Arm', single: 120, course: 600 },
+  { id: 'laser-women-half-legs', name: 'Half Legs', single: 90, course: 450 },
+  { id: 'laser-women-full-legs', name: 'Full Legs', single: 150, course: 750 },
+  { id: 'laser-women-bikini-line', name: 'Bikini Line', single: 65, course: 325 },
+  { id: 'laser-women-brazilian', name: 'Brazilian', single: 85, course: 425 },
+  { id: 'laser-women-hollywood', name: 'Hollywood', single: 100, course: 500 },
+  { id: 'laser-women-tummy-line', name: 'Tummy Line', single: 40, course: 200 },
+  { id: 'laser-women-tummy-addon', name: 'Tummy Line Add-on (to any Bikini)', single: 20, course: 100 },
+  { id: 'laser-women-full-body', name: 'Full Body Package', description: 'Full Legs, Any Bikini, Underarm, Lip', single: 280, originalPrice: 340, course: 1400, isPackage: true },
+  { id: 'laser-women-lip-chin', name: 'Lip & Chin Package', single: 60, course: 300, isPackage: true },
+];
 
 export function PricingWomen() {
   return (
@@ -49,9 +50,10 @@ export function PricingWomen() {
 
         <div className="space-y-4">
           {womenServices.map((service, index) => (
-            <div 
+            <Link 
               key={index}
-              className={`bg-cream/40 rounded-xl shadow-md p-4 md:p-6 hover:shadow-lg transition-shadow ${service.isPackage ? 'border-2 border-accent-gold' : 'border border-accent-gold/10'}`}
+              href={`/booking?service=${service.id}`}
+              className={`block bg-cream/40 rounded-xl shadow-md p-4 md:p-6 hover:shadow-lg transition-shadow cursor-pointer ${service.isPackage ? 'border-2 border-accent-gold' : 'border border-accent-gold/10'}`}
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div className="flex-grow">
@@ -83,7 +85,7 @@ export function PricingWomen() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

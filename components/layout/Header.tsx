@@ -121,7 +121,7 @@ export function Header() {
 
               {/* Mobile Book Now Button */}
               <div className="pt-4 border-t border-beige">
-                <Button text="Book Now" className="w-full" />
+                <Button text="Book Now" className="w-full" href="/booking" />
               </div>
             </nav>
           </div>

@@ -1,8 +1,10 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface ButtonProps {
   text: string;
   onClick?: () => void;
+  href?: string;
   variant?: 'primary' | 'secondary';
   size?: 'small' | 'medium' | 'large';
   disabled?: boolean;
@@ -13,6 +15,7 @@ interface ButtonProps {
 export function Button({
   text,
   onClick,
+  href,
   variant = 'primary',
   size = 'medium',
   disabled = false,
@@ -34,6 +37,16 @@ export function Button({
 
   const combinedClasses = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
 
+  // If href is provided, render as Link
+  if (href) {
+    return (
+      <Link href={href} className={`inline-block ${combinedClasses}`}>
+        {text}
+      </Link>
+    );
+  }
+
+  // Otherwise render as button
   return (
     <button
       type={type}

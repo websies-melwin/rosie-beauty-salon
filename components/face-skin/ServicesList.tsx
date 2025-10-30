@@ -75,6 +75,7 @@ export function ServicesList() {
           {services.map((service) => (
             <ServiceCard
               key={service.id}
+              id={service.id}
               name={service.name}
               description={service.description}
               duration={service.duration}
