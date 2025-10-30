@@ -82,7 +82,7 @@ export function DateTimeSelection({ service, selectedDate, selectedTime, onSelec
       {/* Date selection */}
       <div className="mb-6">
         <h3 className="text-lg font-sans font-medium text-dark-gray mb-3">Choose a Date</h3>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 max-h-64 overflow-y-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
           {availableDates.map((d) => (
             <button
               key={d}
@@ -106,7 +106,7 @@ export function DateTimeSelection({ service, selectedDate, selectedTime, onSelec
           {isLoadingSlots ? (
             <p className="text-base text-medium-gray">Loading available times...</p>
           ) : (
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2 max-h-64 overflow-y-auto">
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
               {timeSlots.filter(slot => slot.available).map((slot) => (
                 <button
                   key={slot.time}
