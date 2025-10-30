@@ -46,12 +46,15 @@ export function ServiceCard({ id, name, description, duration, price, onMoreInfo
             variant="primary"
           />
         </Link>
-        <button
-          onClick={onMoreInfo}
-          className="flex-1 py-3 px-6 bg-white border-2 border-accent-gold text-accent-gold font-sans font-medium rounded-md hover:bg-accent-gold hover:text-white transition-colors"
-        >
-          More Info
-        </button>
+        <div className="flex-1">
+          <Button
+            text="More Info"
+            size="medium"
+            variant="primary"
+            onClick={onMoreInfo}
+            className="w-full"
+          />
+        </div>
       </div>
     </div>
   );
