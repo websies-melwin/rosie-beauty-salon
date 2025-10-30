@@ -7,7 +7,7 @@ export function TechnologyShowcase() {
       {/* Subtle Decorative Elements */}
       <div className="absolute top-20 right-10 w-32 h-32 bg-accent-gold/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 left-10 w-40 h-40 bg-accent-gold/5 rounded-full blur-3xl"></div>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text */}
@@ -19,11 +19,19 @@ export function TechnologyShowcase() {
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-dark-gray mb-6">
-              Advanced ICE MAX Technology
+              Why Choose Laser Hair Removal with Elysion-Pro?
             </h2>
-            <p className="text-base md:text-lg font-sans text-medium-gray leading-relaxed">
-              Thanks to our highly powerful ICE MAX diode laser, we offer professional, permanent hair reduction which gives amazing results. The advanced cooling system ensures comfort during treatment while delivering precise, effective results.
-            </p>
+            <div className="space-y-4 text-base md:text-lg font-sans text-medium-gray leading-relaxed">
+              <p>
+                Elysion Pro is a diode laser proven in practice for hair removal. It is designed for laser hair removal that removes hair in a selective manner. The device targets the pigment in the hair follicle—melanin—using laser pulses that cause thermal destruction of the hair follicle without damaging the skin.
+              </p>
+              <p>
+                This is the most modern technology, which creates a pleasant sensation on the skin, making hair removal safe, painless, comfortable, and long-lasting.
+              </p>
+              <p>
+                Darker skin types are the most limited by laser hair removal, but not by diode laser hair removal, which treats even the darkest skin types throughout the year. Permanent hair removal with diode lasers is possible even during summer and can be applied to all areas of the body.
+              </p>
+            </div>
           </div>
 
           {/* Right Column - Images */}
