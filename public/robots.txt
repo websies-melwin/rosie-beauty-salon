@@ -1,0 +1,13 @@
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://rosiebeautysalon.com/sitemap.xml
+
+# Disallow crawling of booking success pages (to avoid indexing confirmation pages)
+Disallow: /booking/success
+Disallow: /api/
+
+# Crawl-delay (optional, helps prevent overloading the server)
+Crawl-delay: 1

@@ -3,11 +3,11 @@ import { Metadata } from 'next';
 export const siteConfig = {
   name: 'Rosie Beauty Salon',
   description: 'Elite beauty salon in Weston-super-Mare offering professional facial treatments and laser hair removal. Hydrafacial, LED therapy & more. Book today.',
-  url: 'https://rosiebeautysalon.com', // Update with actual domain
-  ogImage: '/og-image.jpg', // Will add when images are provided
+  url: 'https://rosiebeautysalon.com',
+  ogImage: '/og-image.jpg',
   links: {
-    instagram: '#', // Update with actual links
-    facebook: '#', // Update with actual links
+    instagram: 'https://www.instagram.com/rosiebeautyst',
+    facebook: 'https://www.facebook.com/profile.php?id=61575707164944',
   },
   contact: {
     email: 'rosiebeautyst@gmail.com',
