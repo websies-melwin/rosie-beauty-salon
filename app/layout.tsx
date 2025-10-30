@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Cormorant_Garamond, Montserrat } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
@@ -20,6 +20,12 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = createMetadata({})
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+}
 
 export default function RootLayout({
   children,
