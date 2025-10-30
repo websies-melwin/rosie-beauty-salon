@@ -1,4 +1,9 @@
+'use client';
+
+import { useState } from 'react';
 import { ServiceCard } from './ServiceCard';
+import { ServiceModal } from './ServiceModal';
+import { faceServicesDetails } from '@/data/faceServicesDetails';
 
 const services = [
   {
@@ -53,6 +58,19 @@ const services = [
 ];
 
 export function ServicesList() {
+  const [selectedService, setSelectedService] = useState<string | null>(null);
+
+  const handleOpenModal = (serviceId: string) => {
+    setSelectedService(serviceId);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedService(null);
+  };
+
+  const selectedServiceDetails = selectedService ? faceServicesDetails[selectedService] : null;
+  const selectedServiceInfo = services.find(s => s.id === selectedService);
+
   return (
     <section className="w-full bg-white py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -73,10 +91,24 @@ export function ServicesList() {
               description={service.description}
               duration={service.duration}
               price={service.price}
+              onMoreInfo={() => handleOpenModal(service.id)}
             />
           ))}
         </div>
       </div>
+
+      {/* Service Details Modal */}
+      {selectedServiceDetails && selectedServiceInfo && (
+        <ServiceModal
+          isOpen={!!selectedService}
+          onClose={handleCloseModal}
+          serviceName={selectedServiceInfo.name}
+          serviceDescription={selectedServiceDetails.description}
+          packages={selectedServiceDetails.packages}
+          includes={selectedServiceDetails.includes}
+          effects={selectedServiceDetails.effects}
+        />
+      )}
     </section>
   );
 }

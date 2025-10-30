@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { Button } from '../ui/Button';
 
@@ -7,9 +9,10 @@ interface ServiceCardProps {
   description: string;
   duration: string;
   price: number | string;
+  onMoreInfo: () => void;
 }
 
-export function ServiceCard({ id, name, description, duration, price }: ServiceCardProps) {
+export function ServiceCard({ id, name, description, duration, price, onMoreInfo }: ServiceCardProps) {
   const displayPrice = typeof price === 'number' ? `£${price}` : price;
 
   return (
@@ -34,14 +37,22 @@ export function ServiceCard({ id, name, description, duration, price }: ServiceC
         </p>
       </div>
 
-      {/* Book Now Button */}
-      <Link href={`/booking?service=${id}`}>
-        <Button
-          text="Book Now"
-          size="medium"
-          variant="primary"
-        />
-      </Link>
+      {/* Action Buttons */}
+      <div className="flex gap-3">
+        <Link href={`/booking?service=${id}`} className="flex-1">
+          <Button
+            text="Book Now"
+            size="medium"
+            variant="primary"
+          />
+        </Link>
+        <button
+          onClick={onMoreInfo}
+          className="flex-1 py-3 px-6 bg-white border-2 border-accent-gold text-accent-gold font-sans font-medium rounded-md hover:bg-accent-gold hover:text-white transition-colors"
+        >
+          More Info
+        </button>
+      </div>
     </div>
   );
 }
