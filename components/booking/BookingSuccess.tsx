@@ -37,12 +37,12 @@ export function BookingSuccess({
   };
 
   return (
-    <div className="max-w-2xl mx-auto text-center space-y-6 md:space-y-8">
+    <div className="max-w-2xl mx-auto text-center space-y-8">
       {/* Success Icon */}
       <div className="flex justify-center">
-        <div className="w-16 h-16 md:w-20 md:h-20 bg-green-100 rounded-full flex items-center justify-center">
+        <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center">
           <svg
-            className="w-10 h-10 md:w-12 md:h-12 text-green-600"
+            className="w-12 h-12 text-green-600"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -59,45 +59,45 @@ export function BookingSuccess({
 
       {/* Success Message */}
       <div>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-dark-gray mb-3">
+        <h2 className="text-3xl md:text-4xl font-serif font-bold text-dark-gray mb-3">
           Booking Confirmed!
         </h2>
-        <p className="text-base md:text-lg font-sans text-medium-gray">
+        <p className="text-lg font-sans text-medium-gray">
           Your appointment has been successfully booked.
         </p>
       </div>
 
       {/* Booking Reference */}
-      <div className="bg-accent-gold/10 rounded-lg p-5 md:p-6 border-2 border-accent-gold">
-        <p className="text-sm md:text-base font-sans text-medium-gray mb-2">
+      <div className="bg-accent-gold/10 rounded-lg p-6 border-2 border-accent-gold">
+        <p className="text-sm font-sans text-medium-gray mb-2">
           Booking Reference
         </p>
-        <p className="text-xl md:text-2xl font-mono font-bold text-dark-gray tracking-wider">
+        <p className="text-2xl font-mono font-bold text-dark-gray tracking-wider">
           {bookingId.toUpperCase().substring(0, 8)}
         </p>
       </div>
 
       {/* Booking Summary */}
-      <div className="bg-white rounded-lg p-5 md:p-6 shadow-sm border border-cream text-left">
-        <h3 className="text-lg md:text-xl font-serif font-bold text-dark-gray mb-4 text-center">
+      <div className="bg-white rounded-lg p-6 shadow-sm border border-cream text-left">
+        <h3 className="text-lg font-serif font-bold text-dark-gray mb-4 text-center">
           Appointment Summary
         </h3>
         <div className="space-y-3">
-          <div className="flex justify-between items-start gap-4">
-            <span className="font-sans text-medium-gray text-sm md:text-base">Service:</span>
-            <span className="font-sans font-semibold text-dark-gray text-right text-sm md:text-base">
+          <div className="flex justify-between items-start">
+            <span className="font-sans text-medium-gray">Service:</span>
+            <span className="font-sans font-semibold text-dark-gray text-right">
               {bookingData.service?.name}
             </span>
           </div>
-          <div className="flex justify-between items-start gap-4">
-            <span className="font-sans text-medium-gray text-sm md:text-base">Date:</span>
-            <span className="font-sans font-semibold text-dark-gray text-right text-sm md:text-base">
+          <div className="flex justify-between items-start">
+            <span className="font-sans text-medium-gray">Date:</span>
+            <span className="font-sans font-semibold text-dark-gray text-right">
               {bookingData.date && formatDate(bookingData.date)}
             </span>
           </div>
-          <div className="flex justify-between items-start gap-4">
-            <span className="font-sans text-medium-gray text-sm md:text-base">Time:</span>
-            <span className="font-sans font-semibold text-dark-gray text-sm md:text-base">
+          <div className="flex justify-between items-start">
+            <span className="font-sans text-medium-gray">Time:</span>
+            <span className="font-sans font-semibold text-dark-gray">
               {bookingData.time && formatTime(bookingData.time)}
             </span>
           </div>
@@ -105,10 +105,10 @@ export function BookingSuccess({
       </div>
 
       {/* Email Confirmation Notice */}
-      <div className="bg-blue-50 rounded-lg p-4 md:p-5 border border-blue-200">
+      <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
         <div className="flex items-start gap-3">
           <svg
-            className="w-5 h-5 md:w-6 md:h-6 text-blue-600 flex-shrink-0 mt-0.5"
+            className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -121,50 +121,50 @@ export function BookingSuccess({
             />
           </svg>
           <div className="text-left">
-            <p className="text-sm md:text-base font-sans font-semibold text-blue-900 mb-1">
+            <p className="text-sm font-sans font-semibold text-blue-900 mb-1">
               Check your email
             </p>
-            <p className="text-sm md:text-base font-sans text-blue-800">
+            <p className="text-sm font-sans text-blue-800">
               A confirmation email has been sent to{' '}
-              <span className="font-semibold break-all">{bookingData.clientEmail}</span>
+              <span className="font-semibold">{bookingData.clientEmail}</span>
             </p>
           </div>
         </div>
       </div>
 
       {/* Important Information */}
-      <div className="text-left bg-gray-50 rounded-lg p-4 md:p-5 border border-gray-200">
-        <h4 className="font-sans font-bold text-dark-gray mb-3 text-base md:text-lg">
+      <div className="text-left bg-gray-50 rounded-lg p-5 border border-gray-200">
+        <h4 className="font-sans font-bold text-dark-gray mb-3">
           Important Information:
         </h4>
-        <ul className="space-y-2 text-sm md:text-base font-sans text-medium-gray">
+        <ul className="space-y-2 text-sm font-sans text-medium-gray">
           <li className="flex items-start gap-2">
-            <span className="text-accent-gold mt-1 flex-shrink-0">•</span>
+            <span className="text-accent-gold mt-1">•</span>
             <span>Please arrive 5-10 minutes before your appointment time</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-accent-gold mt-1 flex-shrink-0">•</span>
+            <span className="text-accent-gold mt-1">•</span>
             <span>To cancel or reschedule, please contact us at least 24 hours in advance</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-accent-gold mt-1 flex-shrink-0">•</span>
+            <span className="text-accent-gold mt-1">•</span>
             <span>If you have any questions, feel free to call us at 07414 601010</span>
           </li>
         </ul>
       </div>
 
       {/* Action Buttons */}
-      <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-4">
+      <div className="flex flex-col sm:flex-row gap-4 pt-4">
         <button
           type="button"
           onClick={onNewBooking}
-          className="flex-1 px-6 py-3 md:py-4 bg-accent-gold text-white font-sans font-medium text-base md:text-lg rounded-lg hover:bg-accent-gold/90 transition-colors"
+          className="flex-1 px-6 py-3 bg-accent-gold text-white font-sans font-medium rounded-lg hover:bg-accent-gold/90 transition-colors"
         >
           Book Another Appointment
         </button>
         <Link
           href="/"
-          className="flex-1 px-6 py-3 md:py-4 border-2 border-dark-gray text-dark-gray font-sans font-medium text-base md:text-lg rounded-lg hover:bg-dark-gray hover:text-white transition-colors text-center"
+          className="flex-1 px-6 py-3 border-2 border-dark-gray text-dark-gray font-sans font-medium rounded-lg hover:bg-dark-gray hover:text-white transition-colors text-center"
         >
           Return to Homepage
         </Link>

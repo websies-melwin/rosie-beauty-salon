@@ -90,20 +90,22 @@ export function BookingForm() {
             const isCompleted = idx < currentIdx;
 
             return (
-              <div key={label} className="flex-1 flex items-center">
-                <div className={`flex items-center justify-center w-10 h-10 rounded-full text-base font-medium ${
-                  isActive ? 'bg-accent-gold text-white' : 
-                  isCompleted ? 'bg-accent-gold/30 text-accent-gold' : 
-                  'bg-gray-200 text-gray-500'
-                }`}>
-                  {idx + 1}
+              <div key={label} className="flex items-center">
+                <div className="flex flex-col items-center">
+                  <div className={`flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full text-sm md:text-base font-medium ${
+                    isActive ? 'bg-accent-gold text-white' : 
+                    isCompleted ? 'bg-accent-gold/30 text-accent-gold' : 
+                    'bg-gray-200 text-gray-500'
+                  }`}>
+                    {idx + 1}
+                  </div>
+                  <span className={`mt-2 text-xs md:text-sm font-sans text-center ${
+                    isActive ? 'text-dark-gray font-semibold' : 'text-medium-gray'
+                  }`}>
+                    {label}
+                  </span>
                 </div>
-                <span className={`ml-2 text-base font-sans ${
-                  isActive ? 'text-dark-gray font-semibold' : 'text-medium-gray'
-                }`}>
-                  {label}
-                </span>
-                {idx < 3 && <div className="flex-1 h-0.5 bg-gray-200 mx-2" />}
+                {idx < 3 && <div className="flex-1 h-0.5 bg-gray-200 mx-1 md:mx-2" />}
               </div>
             );
           })}
