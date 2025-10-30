@@ -39,18 +39,21 @@ export function ServiceCard({ id, name, description, duration, price, onMoreInfo
 
       {/* Action Buttons */}
       <div className="flex gap-3">
-        <Link href={`/booking?service=${id}`} className="flex-1">
-          <Button
-            text="Book Now"
-            size="medium"
-            variant="primary"
-          />
-        </Link>
+        <div className="flex-1">
+          <Link href={`/booking?service=${id}`}>
+            <Button
+              text="Book Now"
+              size="medium"
+              variant="primary"
+              className="w-full"
+            />
+          </Link>
+        </div>
         <div className="flex-1">
           <Button
             text="More Info"
             size="medium"
-            variant="primary"
+            variant="outline"
             onClick={onMoreInfo}
             className="w-full"
           />

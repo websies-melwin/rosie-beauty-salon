@@ -5,7 +5,7 @@ interface ButtonProps {
   text: string;
   onClick?: () => void;
   href?: string;
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'outline';
   size?: 'small' | 'medium' | 'large';
   disabled?: boolean;
   type?: 'button' | 'submit' | 'reset';
@@ -25,8 +25,9 @@ export function Button({
   const baseStyles = 'font-serif font-semibold rounded-[3rem] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-gold focus:ring-offset-2';
 
   const variantStyles = {
-    primary: 'border-2 border-accent-gold text-accent-gold hover:bg-accent-gold hover:text-white disabled:opacity-50 disabled:cursor-not-allowed',
+    primary: 'bg-accent-gold text-white border-2 border-accent-gold hover:bg-accent-gold/90 disabled:opacity-50 disabled:cursor-not-allowed',
     secondary: 'border-2 border-white text-white hover:bg-white hover:text-accent-gold disabled:opacity-50 disabled:cursor-not-allowed',
+    outline: 'border-2 border-accent-gold text-accent-gold hover:bg-accent-gold hover:text-white disabled:opacity-50 disabled:cursor-not-allowed',
   };
 
   const sizeStyles = {
