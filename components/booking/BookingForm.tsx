@@ -91,15 +91,15 @@ export function BookingForm() {
 
             return (
               <div key={label} className="flex-1 flex items-center">
-                <div className={`flex items-center justify-center w-8 h-8 rounded-full text-sm font-medium ${
+                <div className={`flex items-center justify-center w-10 h-10 rounded-full text-base font-medium ${
                   isActive ? 'bg-accent-gold text-white' : 
                   isCompleted ? 'bg-accent-gold/30 text-accent-gold' : 
                   'bg-gray-200 text-gray-500'
                 }`}>
                   {idx + 1}
                 </div>
-                <span className={`ml-2 text-sm font-sans ${
-                  isActive ? 'text-dark-gray font-medium' : 'text-medium-gray'
+                <span className={`ml-2 text-base font-sans ${
+                  isActive ? 'text-dark-gray font-semibold' : 'text-medium-gray'
                 }`}>
                   {label}
                 </span>

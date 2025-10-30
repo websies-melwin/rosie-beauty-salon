@@ -12,10 +12,10 @@ export default function BookingPage() {
     <div className="min-h-screen bg-cream py-16 md:py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-dark-gray mb-4">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-dark-gray mb-8">
             Book Your Appointment
           </h1>
-          <p className="text-lg font-sans text-medium-gray">
+          <p className="text-xl md:text-2xl font-sans text-medium-gray">
             Select your desired service and choose a convenient time
           </p>
         </div>

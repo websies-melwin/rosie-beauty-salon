@@ -72,22 +72,22 @@ export function DateTimeSelection({ service, selectedDate, selectedTime, onSelec
 
   return (
     <div>
-      <h2 className="text-2xl font-serif font-bold text-dark-gray mb-2">
+      <h2 className="text-2xl md:text-3xl font-serif font-bold text-dark-gray mb-2">
         Select Date & Time
       </h2>
-      <p className="text-base font-sans text-medium-gray mb-6">
+      <p className="text-base md:text-lg font-sans text-medium-gray mb-6">
         {service.name} • {service.duration} min • £{service.price}
       </p>
 
       {/* Date selection */}
       <div className="mb-6">
-        <h3 className="text-lg font-sans font-medium text-dark-gray mb-3">Choose a Date</h3>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 max-h-64 overflow-y-auto">
+        <h3 className="text-base md:text-lg font-sans font-medium text-dark-gray mb-3">Choose a Date</h3>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-3 max-h-64 overflow-y-auto">
           {availableDates.map((d) => (
             <button
               key={d}
               onClick={() => { setDate(d); setTime(''); }}
-              className={`p-3 rounded-lg border-2 text-sm font-sans transition-colors ${
+              className={`p-3 md:p-4 rounded-lg border-2 text-sm md:text-base font-sans transition-colors ${
                 date === d
                   ? 'border-accent-gold bg-accent-gold/10 text-accent-gold font-medium'
                   : 'border-beige hover:border-accent-gold/50'
@@ -102,16 +102,16 @@ export function DateTimeSelection({ service, selectedDate, selectedTime, onSelec
       {/* Time selection */}
       {date && (
         <div className="mb-6">
-          <h3 className="text-lg font-sans font-medium text-dark-gray mb-3">Choose a Time</h3>
+          <h3 className="text-base md:text-lg font-sans font-medium text-dark-gray mb-3">Choose a Time</h3>
           {isLoadingSlots ? (
-            <p className="text-medium-gray">Loading available times...</p>
+            <p className="text-base md:text-lg text-medium-gray">Loading available times...</p>
           ) : (
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2 max-h-64 overflow-y-auto">
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2 md:gap-3 max-h-64 overflow-y-auto">
               {timeSlots.filter(slot => slot.available).map((slot) => (
                 <button
                   key={slot.time}
                   onClick={() => setTime(slot.time)}
-                  className={`p-2 rounded-lg border-2 text-sm font-sans transition-colors ${
+                  className={`p-3 md:p-4 rounded-lg border-2 text-sm md:text-base font-sans transition-colors ${
                     time === slot.time
                       ? 'border-accent-gold bg-accent-gold/10 text-accent-gold font-medium'
                       : 'border-beige hover:border-accent-gold/50'
@@ -126,17 +126,17 @@ export function DateTimeSelection({ service, selectedDate, selectedTime, onSelec
       )}
 
       {/* Actions */}
-      <div className="flex gap-4">
+      <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
         <button
           onClick={onBack}
-          className="px-6 py-3 rounded-full border-2 border-dark-gray text-dark-gray font-sans font-medium hover:bg-dark-gray hover:text-white transition-colors"
+          className="w-full sm:w-auto px-6 py-3 md:py-4 rounded-full border-2 border-dark-gray text-dark-gray font-sans font-medium text-base md:text-lg hover:bg-dark-gray hover:text-white transition-colors"
         >
           Back
         </button>
         <button
           onClick={() => canContinue && onSelect(date, time)}
           disabled={!canContinue}
-          className={`flex-1 px-6 py-3 rounded-full font-sans font-medium transition-colors ${
+          className={`flex-1 px-6 py-3 md:py-4 rounded-full font-sans font-medium text-base md:text-lg transition-colors ${
             canContinue
               ? 'bg-accent-gold text-white hover:bg-accent-gold/90'
               : 'bg-gray-300 text-gray-500 cursor-not-allowed'

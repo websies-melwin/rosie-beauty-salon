@@ -59,7 +59,7 @@ export function ServiceSelection({ onSelect }: ServiceSelectionProps) {
       </div>
 
       {/* Services grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-h-96 overflow-y-auto pr-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-h-[600px] overflow-y-auto pr-2">
         {services.map((service) => (
           <button
             key={service.id}
