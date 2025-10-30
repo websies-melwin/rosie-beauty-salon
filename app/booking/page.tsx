@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { BookingForm } from '@/components/booking/BookingForm';
 import { createMetadata } from '@/lib/metadata';
 
@@ -26,8 +27,15 @@ export default function BookingPage() {
             <span className="font-semibold">Payment:</span> All services are paid in person with cash only
           </p>
         </div>
-        
-        <BookingForm />
+
+        <Suspense fallback={
+          <div className="text-center py-12">
+            <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-accent-gold"></div>
+            <p className="mt-4 text-medium-gray">Loading booking form...</p>
+          </div>
+        }>
+          <BookingForm />
+        </Suspense>
       </div>
     </div>
   );
