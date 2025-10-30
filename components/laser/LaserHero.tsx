@@ -23,7 +23,7 @@ export function LaserHero() {
 
         {/* Main Description */}
         <p className="text-lg md:text-xl font-sans text-medium-gray leading-relaxed max-w-3xl mx-auto">
-          Thanks to our highly powerful ICE MAX diode laser, we offer professional, permanent hair reduction with amazing results. The process involves a specific wavelength light that targets melanin in the hair follicle. The light is converted to heat, which damages the follicle enough to significantly slow down hair growth, without damaging the surrounding skin. Our advanced technology ensures safe, effective treatments with minimal discomfort, delivering long-lasting results that help you achieve smooth, hair-free skin with confidence.
+          Experience safe, painless, and long-lasting hair removal with our Elysion-Pro diode laser. This proven technology selectively targets melanin in hair follicles using precise laser pulses that cause thermal destruction without damaging your skin. The most modern solution that creates a pleasant sensation, our system treats all skin types year-round and can be applied to all areas of the body. Achieve smooth, hair-free skin with permanent results and improved skin health.
         </p>
       </div>
     </section>
