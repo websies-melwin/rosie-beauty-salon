@@ -48,13 +48,13 @@ export function EquipmentAbout() {
 
             {/* Right Column - Equipment Image */}
             <div className="flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-xs lg:max-w-sm">
-                <div className="relative aspect-[3/4] rounded-lg overflow-hidden border-2 border-accent-gold/30">
+              <div className="relative w-full max-w-xs lg:max-w-md">
+                <div className="relative aspect-square rounded-lg overflow-hidden border-2 border-accent-gold/30">
                   <Image
-                    src="/images/equipment-showcase.png"
+                    src="/images/hydrafacial-machine.png"
                     alt="Professional Hydrafacial MD Equipment"
                     fill
-                    className="object-contain"
+                    className="object-cover"
                     quality={90}
                   />
                 </div>
