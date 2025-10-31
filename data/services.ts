@@ -8,30 +8,30 @@ export interface Service {
   description: string;
 }
 
-// Face & Skin Services (8 services)
+// Face & Skin Services (7 services)
 export const FACIAL_SERVICES: Service[] = [
   {
     id: 'basic-therapy',
     name: 'Basic Therapy',
     category: 'facial',
-    duration: 60,
-    price: 65,
+    duration: 30,
+    price: 80,
     description: 'Extraction + Peeling',
   },
   {
     id: 'deluxe-therapy',
     name: 'Deluxe Therapy',
     category: 'facial',
-    duration: 75,
-    price: 110,
+    duration: 45,
+    price: 120,
     description: 'Deep cleanse + Exfoliation + LED Light + PPT + Calming Serum',
   },
   {
     id: 'platinum-therapy',
     name: 'Platinum Therapy',
     category: 'facial',
-    duration: 90,
-    price: 160,
+    duration: 60,
+    price: 140,
     description: 'Ultimate luxury facial with deep cleanse, extraction, LED, PPT, Derma Plane, Jade Roller, Ice Sphere',
   },
   {
@@ -39,7 +39,7 @@ export const FACIAL_SERVICES: Service[] = [
     name: 'Lip Therapy',
     category: 'facial',
     duration: 30,
-    price: 35,
+    price: 60,
     description: 'Revitalize your ultimate lips',
   },
   {
@@ -54,16 +54,16 @@ export const FACIAL_SERVICES: Service[] = [
     id: 'lymphatic-drainage-therapy',
     name: 'Lymphatic Drainage Therapy + LED Lights',
     category: 'facial',
-    duration: 45,
-    price: 95,
+    duration: 30,
+    price: 80,
     description: 'Lymphatic drainage therapy infused and combined with LED lights',
   },
   {
     id: 'scalp-face-nerola-therapy',
     name: 'Scalp and Face Nerola Therapy',
     category: 'facial',
-    duration: 75,
-    price: 95,
+    duration: 45,
+    price: 100,
     description: 'Relaxation of scalp and face muscle',
   },
 ];
