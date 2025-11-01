@@ -11,7 +11,7 @@ export const faceServicesDetails: Record<string, ServiceDetail> = {
     id: 'basic-therapy',
     description: 'A comprehensive foundational treatment that combines gentle exfoliation, deep cleansing, and intensive hydration to rejuvenate your skin.',
     packages: [
-      'Single Treatment - £80 (30 min)',
+      'Treatment - £80 (30 min)',
     ],
     includes: [
       'ACTIV-4 Serum – Gently removes dead cells, hydrates, and reduces fine lines',
@@ -30,7 +30,7 @@ export const faceServicesDetails: Record<string, ServiceDetail> = {
     id: 'deluxe-therapy',
     description: 'Our most popular all-in-one facial therapy that builds upon the Basic Therapy with advanced LED technology and customized boosters for transformative results.',
     packages: [
-      'Single Treatment - £120 (45 min)',
+      'Treatment - £120 (45 min)',
     ],
     includes: [
       'All steps of the Basic Therapy',
@@ -49,7 +49,7 @@ export const faceServicesDetails: Record<string, ServiceDetail> = {
     id: 'platinum-therapy',
     description: 'The ultimate luxury facial experience featuring lymphatic drainage for detoxification, combined with all the benefits of our Deluxe Therapy and the exclusive JLO Booster.',
     packages: [
-      'Single Treatment - £140 (60 min)',
+      'Treatment - £140 (60 min)',
     ],
     includes: [
       'Lymphatic Drainage – Removes toxins for naturally radiant skin',
@@ -68,7 +68,7 @@ export const faceServicesDetails: Record<string, ServiceDetail> = {
     id: 'lip-therapy',
     description: 'Specialized treatment to hydrate and plump lips using our Cerym Perk Lip system, leaving them soft, refreshed, and beautifully enhanced. Includes a take-home booster for continued care.',
     packages: [
-      'Single Treatment - £60 (30 min)',
+      'Treatment - £60 (30 min)',
     ],
     includes: [
       'Cerym Perk Lip treatment – Professional hydration and plumping',
@@ -85,7 +85,7 @@ export const faceServicesDetails: Record<string, ServiceDetail> = {
     id: 'eye-contour-therapy',
     description: 'Targeted therapy for the delicate eye area using Perk Eye technology to smooth, rejuvenate, and visibly reduce crow\'s feet wrinkles. Includes a take-home booster for lasting results.',
     packages: [
-      'Single Treatment - £65 (30 min)',
+      'Treatment - £65 (30 min)',
     ],
     includes: [
       'Perk Eye treatment – Specialized eye area rejuvenation',
@@ -104,7 +104,7 @@ export const faceServicesDetails: Record<string, ServiceDetail> = {
     id: 'lymphatic-drainage-therapy',
     description: 'Advanced therapy that removes toxins and improves circulation through lymphatic drainage, enhanced with LED light therapy for comprehensive skin rejuvenation and natural radiance.',
     packages: [
-      'Single Treatment - £80 (30 min)',
+      'Treatment - £80 (30 min)',
     ],
     includes: [
       'Professional Lymphatic Drainage technique',
@@ -123,7 +123,7 @@ export const faceServicesDetails: Record<string, ServiceDetail> = {
     id: 'scalp-face-nerola-therapy',
     description: 'Unique therapy combining scalp and facial treatments to promote relaxation, improve circulation, and enhance both scalp health and facial radiance through specialized massage techniques.',
     packages: [
-      'Single Treatment - £100 (45 min)',
+      'Treatment - £100 (45 min)',
     ],
     includes: [
       'Scalp massage for improved circulation and hair health',

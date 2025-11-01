@@ -73,11 +73,11 @@ export function ServiceModal({
             </p>
           </div>
 
-          {/* Treatment Packages */}
+          {/* Treatment */}
           {packages && packages.length > 0 && (
             <div>
               <h4 className="text-lg font-serif font-semibold text-dark-gray mb-3">
-                Treatment Packages
+                Treatment
               </h4>
               <ul className="space-y-2">
                 {packages.map((pkg, index) => (
