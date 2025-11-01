@@ -136,8 +136,19 @@ export function BookingConfirmation({
         </div>
       </div>
 
+      {/* Cash Payment Notice */}
+      <div className="bg-accent-gold/10 rounded-lg p-5 border-2 border-accent-gold">
+        <p className="text-base font-sans text-dark-gray font-semibold mb-2">
+          💵 Cash Payment Required
+        </p>
+        <p className="text-sm font-sans text-dark-gray">
+          Please bring <strong>£{bookingData.service?.price} in cash</strong> for your appointment. 
+          We currently accept cash payments only.
+        </p>
+      </div>
+
       {/* Important Notice */}
-      <div className="bg-accent-gold/10 rounded-lg p-4 border border-accent-gold/30">
+      <div className="bg-cream rounded-lg p-4 border border-medium-gray/20">
         <p className="text-sm font-sans text-dark-gray">
           <strong>Please note:</strong> You will receive a confirmation email once your booking is confirmed. 
           If you need to cancel or reschedule, please contact us at least 24 hours in advance.
