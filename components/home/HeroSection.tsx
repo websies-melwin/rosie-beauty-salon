@@ -5,7 +5,7 @@ export function HeroSection() {
   return (
     <section className="relative w-full bg-white min-h-screen md:min-h-0 flex items-center justify-center py-6 md:py-8 lg:py-12">
       <div className="max-w-7xl mx-auto px-5 sm:px-4 md:px-6 lg:px-8 w-full">
-        <div className="relative h-[85vh] md:h-[70vh] lg:h-[75vh] rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden -mt-8 md:mt-0">
+        <div className="relative h-[85vh] md:h-0 md:aspect-video rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden -mt-8 md:mt-0">
           {/* Mobile Background Image */}
           <Image
             src="/images/hero-mobile.avif"
