@@ -34,7 +34,7 @@ export function GallerySection() {
               <div className="relative aspect-square overflow-hidden">
                 <Image
                   src={`/images/gallery-${num}.avif`}
-                  alt={`Gallery image ${num}`}
+                  alt={`Rosie Beauty Salon interior and treatment room ${num}`}
                   fill
                   className="object-cover"
                   quality={90}

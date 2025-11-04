@@ -5,8 +5,8 @@ import { ServicesList } from '@/components/face-skin/ServicesList';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-  title: 'Face & Skin Treatments',
-  description: 'Professional facial and skin treatments in Weston-super-Mare. Hydrafacial, LED therapy, lymphatic drainage, eye contour therapy and more. Book your treatment today.',
+  title: 'Facial Treatments Weston-super-Mare | Hydrafacial & LED Therapy',
+  description: 'Professional facial treatments from £60 at Rosie Beauty Salon. Hydrafacial MD, LED light therapy, lymphatic drainage, anti-aging treatments. Book online or call 07414 601010.',
   path: '/face-skin',
 });
 

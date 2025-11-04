@@ -49,9 +49,10 @@ export function createMetadata({
   
   const pageDescription = description || siteConfig.description;
   const pageUrl = `${siteConfig.url}${path}`;
-  const pageOgImage = ogImage || siteConfig.ogImage;
+  const pageOgImage = `${siteConfig.url}${ogImage || siteConfig.ogImage}`;
 
   return {
+    metadataBase: new URL(siteConfig.url),
     title: pageTitle,
     description: pageDescription,
     keywords: [
@@ -102,6 +103,7 @@ export function createMetadata({
 export const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'BeautySalon',
+  '@id': siteConfig.url,
   name: siteConfig.name,
   description: siteConfig.description,
   url: siteConfig.url,
@@ -111,12 +113,13 @@ export const localBusinessSchema = {
     '@type': 'PostalAddress',
     streetAddress: siteConfig.contact.address.street,
     addressLocality: siteConfig.contact.address.city,
+    addressRegion: 'Somerset',
     postalCode: siteConfig.contact.address.postcode,
-    addressCountry: siteConfig.contact.address.country,
+    addressCountry: 'GB',
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 51.3461, // Weston-super-Mare coordinates (approximate)
+    latitude: 51.3461,
     longitude: -2.9770,
   },
   openingHoursSpecification: [
@@ -140,9 +143,95 @@ export const localBusinessSchema = {
     },
   ],
   priceRange: '££',
-  image: siteConfig.ogImage,
+  image: `${siteConfig.url}${siteConfig.ogImage}`,
+  logo: `${siteConfig.url}/logo.jpg`,
   sameAs: [
     siteConfig.links.instagram,
     siteConfig.links.facebook,
   ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Beauty Services',
+    itemListElement: [
+      {
+        '@type': 'OfferCatalog',
+        name: 'Facial Treatments',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Basic Therapy',
+              description: 'Extraction + Peeling',
+            },
+            price: '80.00',
+            priceCurrency: 'GBP',
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Deluxe Therapy',
+              description: 'Deep cleanse + Exfoliation + LED Light',
+            },
+            price: '120.00',
+            priceCurrency: 'GBP',
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Platinum Therapy',
+              description: 'Ultimate luxury facial experience',
+            },
+            price: '140.00',
+            priceCurrency: 'GBP',
+          },
+        ],
+      },
+      {
+        '@type': 'OfferCatalog',
+        name: 'Laser Hair Removal',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Laser Hair Removal',
+              description: 'Professional laser hair removal using Elysion-Pro technology',
+            },
+            priceSpecification: {
+              '@type': 'PriceSpecification',
+              minPrice: '40.00',
+              maxPrice: '300.00',
+              priceCurrency: 'GBP',
+            },
+          },
+        ],
+      },
+    ],
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '47',
+    bestRating: '5',
+    worstRating: '1',
+  },
+  areaServed: [
+    {
+      '@type': 'City',
+      name: 'Weston-super-Mare',
+    },
+    {
+      '@type': 'AdministrativeArea',
+      name: 'North Somerset',
+    },
+    {
+      '@type': 'AdministrativeArea',
+      name: 'Somerset',
+    },
+  ],
+  paymentAccepted: 'Cash',
+  currenciesAccepted: 'GBP',
 };

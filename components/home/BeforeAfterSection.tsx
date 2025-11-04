@@ -35,7 +35,7 @@ export function BeforeAfterSection() {
                 <div className="relative aspect-square rounded-lg overflow-hidden">
                   <Image
                     src="/images/before-1.png"
-                    alt="Before treatment 1"
+                    alt="Before facial treatment - client skin condition"
                     fill
                     className="object-cover"
                     quality={90}
@@ -49,7 +49,7 @@ export function BeforeAfterSection() {
                 <div className="relative aspect-square rounded-lg overflow-hidden">
                   <Image
                     src="/images/after-1.png"
-                    alt="After treatment 1"
+                    alt="After facial treatment - visible skin improvement"
                     fill
                     className="object-cover"
                     quality={90}
@@ -69,7 +69,7 @@ export function BeforeAfterSection() {
                 <div className="relative aspect-square rounded-lg overflow-hidden">
                   <Image
                     src="/images/before-2.png"
-                    alt="Before treatment 2"
+                    alt="Before Hydrafacial treatment - skin texture"
                     fill
                     className="object-cover"
                     quality={90}
@@ -83,7 +83,7 @@ export function BeforeAfterSection() {
                 <div className="relative aspect-square rounded-lg overflow-hidden">
                   <Image
                     src="/images/after-2.png"
-                    alt="After treatment 2"
+                    alt="After Hydrafacial treatment - improved skin clarity"
                     fill
                     className="object-cover"
                     quality={90}

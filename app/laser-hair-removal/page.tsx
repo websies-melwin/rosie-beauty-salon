@@ -9,8 +9,8 @@ import { LaserCTA } from '@/components/laser/LaserCTA';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-  title: 'Laser Hair Removal',
-  description: 'Professional laser hair removal for men and women in Weston-super-Mare. Safe, effective, long-lasting results. Competitive pricing with package deals. Book consultation today.',
+  title: 'Laser Hair Removal Weston-super-Mare | Elysion-Pro Technology',
+  description: 'Pain-free laser hair removal from £40. Advanced Elysion-Pro diode laser for all skin types. Permanent results for men & women. Book your consultation at Rosie Beauty Salon.',
   path: '/laser-hair-removal',
 });
 
