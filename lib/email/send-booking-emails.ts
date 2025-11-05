@@ -16,6 +16,14 @@ interface BookingEmailData {
 
 export async function sendBookingEmails(booking: BookingEmailData) {
   try {
+    // Check if API key is set at runtime
+    if (!process.env.RESEND_API_KEY) {
+      console.error('RESEND_API_KEY is not set - emails will not be sent');
+      return {
+        success: false,
+        error: 'RESEND_API_KEY not configured',
+      };
+    }
     // Send confirmation email to client
     const clientEmailResult = await resend.emails.send({
       from: `Rosie Beauty Salon <${EMAIL_CONFIG.from}>`,
