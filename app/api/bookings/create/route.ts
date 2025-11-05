@@ -3,6 +3,7 @@ import { supabaseAdmin } from '@/lib/supabase/server';
 import { calculateEndTime, isTimeSlotAvailable } from '@/lib/booking/time-slots';
 import { CreateBookingInput, Booking } from '@/types/booking';
 import { sendBookingEmails } from '@/lib/email/send-booking-emails';
+import { createCalendarEvent } from '@/lib/calendar/google-calendar';
 
 export async function POST(request: NextRequest) {
   try {
@@ -116,7 +117,22 @@ export async function POST(request: NextRequest) {
       console.warn('Emails failed to send but booking was created:', emailResult.error);
     }
 
-    // TODO: Create Google Calendar event (Phase 10)
+    // Create Google Calendar event
+    const calendarResult = await createCalendarEvent({
+      client_name: booking.client_name,
+      client_email: booking.client_email,
+      client_phone: booking.client_phone,
+      service_name: booking.service_name,
+      service_price: booking.service_price,
+      booking_date: booking.booking_date,
+      booking_time: booking.booking_time,
+      service_duration: booking.service_duration,
+      special_requests: booking.special_requests || undefined,
+    });
+
+    if (!calendarResult.success) {
+      console.warn('Calendar event failed to create but booking was created:', calendarResult.error);
+    }
 
     return NextResponse.json({
       success: true,
@@ -124,6 +140,7 @@ export async function POST(request: NextRequest) {
       message: 'Booking confirmed successfully',
       booking_details: booking,
       emails_sent: emailResult.success,
+      calendar_created: calendarResult.success,
     });
   } catch (error) {
     console.error('Error in create booking API:', error);
