@@ -9,9 +9,27 @@ function getCalendarClient() {
   }
 
   try {
+    // Decode the private key - it can be either base64 encoded or raw with \n
+    let privateKey = process.env.GOOGLE_PRIVATE_KEY;
+
+    // If it doesn't start with "-----BEGIN", it's base64 encoded
+    if (!privateKey.startsWith('-----BEGIN')) {
+      try {
+        privateKey = Buffer.from(privateKey, 'base64').toString('utf-8');
+        console.log('🔓 Decoded base64 private key');
+      } catch (decodeError) {
+        console.error('❌ Failed to decode base64 private key:', decodeError);
+        return null;
+      }
+    } else {
+      // It's raw, replace escaped newlines with actual newlines
+      privateKey = privateKey.replace(/\\n/g, '\n');
+      console.log('🔓 Using raw private key with newline replacement');
+    }
+
     const auth = new google.auth.JWT({
       email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-      key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+      key: privateKey,
       scopes: ['https://www.googleapis.com/auth/calendar'],
     });
 
