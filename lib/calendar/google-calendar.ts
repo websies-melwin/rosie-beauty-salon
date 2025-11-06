@@ -39,6 +39,8 @@ export async function createCalendarEvent(booking: BookingDetails) {
   console.log('📧 Service account email:', process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL);
   console.log('📅 Calendar ID:', process.env.GOOGLE_CALENDAR_ID);
   console.log('🔑 Private key present:', !!process.env.GOOGLE_PRIVATE_KEY);
+  console.log('🔑 Private key length:', process.env.GOOGLE_PRIVATE_KEY?.length);
+  console.log('🔑 Private key starts with:', process.env.GOOGLE_PRIVATE_KEY?.substring(0, 30));
   
   try {
     const calendar = getCalendarClient();
