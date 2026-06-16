@@ -130,9 +130,9 @@ export function Footer() {
             © {new Date().getFullYear()} Rosie Beauty Salon. All rights reserved.
           </p>
           <p className="text-lg font-serif text-dark-gray font-medium">
-            Made by{' '}
+            Website by{' '}
             <a
-              href="https://www.websies.co"
+              href="https://websies.co"
               target="_blank"
               rel="noopener noreferrer"
               className="text-accent-gold hover:text-accent-gold/80 transition-colors font-semibold"
